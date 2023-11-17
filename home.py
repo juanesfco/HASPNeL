@@ -51,8 +51,6 @@ if option == 'Define':
 
     data = st.session_state.data
 
-    st.dataframe(data)
-
     def add_dfForm():
         row = pd.DataFrame({'utterance':[st.session_state.input_colA]})
         st.session_state.data = pd.concat([st.session_state.data, row],ignore_index=True)
@@ -64,6 +62,8 @@ if option == 'Define':
         with dfColumns[0]:
             st.text_input('Enter utterances to add them in the dataframe. Reload page to reset.', key='input_colA')
         st.form_submit_button(on_click=add_dfForm)
+        
+    st.dataframe(data)
 else:
     uploaded_file = st.file_uploader("Choose a file")
     try:
