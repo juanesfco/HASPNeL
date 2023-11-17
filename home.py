@@ -38,7 +38,7 @@ with col1:
     col1.markdown('### Step 2. Define your utterances or upload a .csv file with the following format ->')
 with col2:
     with open('data/utterances.csv') as f:
-        col2.download_button('Download CSV', f, 'utterances.csv')
+        col2.download_button('Download Format CSV', f, 'utterances.csv')
 
 option = st.selectbox(
     '',
